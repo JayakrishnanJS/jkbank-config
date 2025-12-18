@@ -4,8 +4,9 @@ build:
 loans:
   message: "Welcome to the Loans Service APIs support team of JK Bank"
   contactDetails:
-    name: "Support Team"
+    name: "Steve - Product Manager"
     email: "jk@jkbank.com"
   onCallSupport:
     - 1800-123-456
+
     - 1800-987-454
