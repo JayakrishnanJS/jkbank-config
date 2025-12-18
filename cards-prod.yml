@@ -4,7 +4,7 @@ build:
 cards:
   message: "Welcome to the Cards Service APIs support team of JK Bank"
   contactDetails:
-    name: "Support Team"
+    name: "Steve - Product Manager"
     email: "jk@jkbank.com"
   onCallSupport:
     - 1800-123-456
