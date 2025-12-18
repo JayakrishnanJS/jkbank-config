@@ -2,13 +2,14 @@ build:
   version: "1.0"
 
 accounts:
-  message: "Welcome to the Accounts Service APIs prod support team of JK Bank"
+  message: "Welcome to the Accounts Service APIs production support team of JK Bank"
   contactDetails:
     name: "Steve - Product Manager"
     email: "{cipher}3b34730332c9fc6d1bf0dc52e3e2d6f674f514895820cf973541a4e9b9e6ef9c"
   onCallSupport:
     - 1800-123-456
     - 1800-987-454
+
 
 
 
