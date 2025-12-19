@@ -2,7 +2,7 @@ build:
   version: "3.0"
 
 accounts:
-  message: "Welcome to the Accounts Service local APIs of JK Bank"
+  message: "Welcome to the Accounts Service docker APIs of JK Bank"
   contactDetails:
     name: "JK"
     email: "jk@jkbank.com"
