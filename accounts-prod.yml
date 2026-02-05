@@ -1,6 +1,7 @@
 build:
   version: "1.0"
 
+# --- Business Data ---
 accounts:
   message: "Welcome to the Accounts Service APIs production support team of JK Bank"
   contactDetails:
@@ -10,7 +11,25 @@ accounts:
     - 1800-123-456
     - 1800-987-000
 
-
-
-
-
+# --- Kafka & Messaging Configuration ---
+spring:
+  application:
+    name: accounts
+  cloud:
+    function:
+      definition: updateCommunication
+    stream:
+      default-binder: kafka
+      bindings:
+        # Input: Receive feedback from Message Service
+        updateCommunication-in-0:
+          destination: feedback-account-communication-sent
+          group: accounts
+        
+        # Output: Send SMS/Email request to Message Service
+        sendCommunication-out-0:
+          destination: send-account-communication
+      kafka:
+        binder:
+          brokers:
+            - kafka:9092
