@@ -35,3 +35,7 @@ spring:
         binder:
           brokers:
             - kafka:9092
+          # --- START OF FIX ---
+          configuration:
+            # "Trust all packages" allows us to read the DTO sent by Accounts/Loans services
+            spring.json.trusted.packages: "*"kafka:9092
