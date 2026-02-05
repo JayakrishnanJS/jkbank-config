@@ -39,3 +39,5 @@ spring:
           configuration:
             # "Trust all packages" allows us to read the DTO sent by Accounts/Loans services
             spring.json.trusted.packages: "*"
+            # 2. THE FIX: Ignore the sender's package name and use your own DTO
+            spring.json.use.type.headers: false
