@@ -1,2 +1,2 @@
 # jkbank-config
-Spring Clou config management repo for JK Bank application
+Spring Cloud config management repo for JK Bank application
