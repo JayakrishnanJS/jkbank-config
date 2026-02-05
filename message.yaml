@@ -1,0 +1,37 @@
+build:
+  version: "1.0"
+
+spring:
+  application:
+    name: message
+  cloud:
+    function:
+      # We chain the Email function into the SMS function for both Account and Loan events
+      definition: emailAccountDetails|smsAccountDetails;emailLoanDetails|smsLoanDetails
+    stream:
+      default-binder: kafka
+      bindings:
+        # --- 1. ACCOUNTS FLOW ---
+        # Input: Listen to the "send-account-communication" topic (Coming from Accounts MS)
+        emailAccountDetailssmsAccountDetails-in-0:
+          destination: send-account-communication
+          group: message
+        
+        # Output: Send success/failure feedback back to "feedback-account-communication-sent"
+        emailAccountDetailssmsAccountDetails-out-0:
+          destination: feedback-account-communication-sent
+
+        # --- 2. LOANS FLOW ---
+        # Input: Listen to the "send-loan-communication" topic (Coming from Loans MS)
+        emailLoanDetailssmsLoanDetails-in-0:
+          destination: send-loan-communication
+          group: message
+        
+        # Output: Send success/failure feedback back to "feedback-loan-communication-sent"
+        emailLoanDetailssmsLoanDetails-out-0:
+          destination: feedback-loan-communication-sent
+          
+      kafka:
+        binder:
+          brokers:
+            - kafka:9092
