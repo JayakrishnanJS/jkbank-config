@@ -5,7 +5,7 @@ build:
 accounts:
   message: "Welcome to the Accounts Service APIs production support team of JK Bank"
   contactDetails:
-    name: "Steve - Product Manager"
+    name: "Teja - Product Manager"
     email: "jk@jkbank.com"
   onCallSupport:
     - 1800-123-456
@@ -33,4 +33,5 @@ spring:
         binder:
           brokers:
             - kafka:9092
+
 
